@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div 스타일</title>
+    <style type="text/css">
+        /* margin은 동급 태그들끼리만 그 외는 padding으로 조절 */
+        #box1{
+            width:500px;
+            height:100px;
+            border:2px solid red;
+            background-color:aquamarine;
+        }
+
+        #box2{
+            width:50px;
+            height:50px;
+            background-color:pink;
+            
+        }
+        #box3{
+            width:800px;
+            box-sizing: border-box; /*해당 태그의 너비 = 패딩 + 테두리+ 콘텐츠(파랑색영역) */
+            margin-top:10px;
+            padding-left:40px;
+        }
+
+        #content{
+            width:700px;
+            background:skyblue;
+            box-sizing: border-box;
+            padding:40px;
+            
+        }
+        #item1{
+            background:orange;
+            height:100px;
+            margin-bottom:20px;
+            
+        }
+        #item2{
+            height:100px;
+            background:seagreen;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box3">
+        <div id="box2"></div>
+    </div>
+
+    <div id="content">
+        <div id="item1"></div>
+        <div id="item2"></div>
+    </div>
+    
+    
+</body>
+</html>
