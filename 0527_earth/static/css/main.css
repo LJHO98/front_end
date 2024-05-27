@@ -87,7 +87,7 @@ ul{
     border-radius:5px;
 }
 
-#list li{
+.list li{
     font-size:13px;
     color:white;
     padding:7px 5px;
