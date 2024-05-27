@@ -12,11 +12,13 @@ ul{
     margin:0 auto;
     position:relative;
 }
+
 #header{
     width:100%;
     margin-bottom: 20px; /* #main 태그와의 간격 */
     position:relatvie;
 }
+
 #top{
     background-color:#3b414d;
     color:#eee;
@@ -78,4 +80,166 @@ float 단점 : 부모로부터 독립해서 상위태그의 높이나 너비의 
     color:brown;
     font-weight:800;
     text-shadow: 3px 3px 2px #444;
+}
+
+#main{
+    width:100%;
+}
+
+#slide{
+    width:100%;
+    position:relative;
+}
+#slide .slide_image{
+    /* background:url(../image/slide.jpeg);
+    background-repeat:no-repeat;
+    /* cover = 확대, contain = 맞춤
+    background-position: center; */
+
+    background:url(../image/slide.jpeg) no-repeat center;
+    background-size:cover;
+    height:350px;
+}
+/* 내가 한거 */
+/* #slide .move{
+    font-size:25px;
+}
+#slide .move_bt{
+    width:30px;
+    text-align: center;
+    position:absolute;
+    background-color:#fff;
+}
+.left{
+    left:10px;
+    top:160px;
+}
+
+.right{
+    right:10px;
+    top:160px;
+} */
+
+.move_bt{
+    position:absolute;
+    top:50%;
+    /* p태그 높이의 반절만큼 위로 올리기 */
+    transform:translateY(-50%);
+    background-color: #eee;
+    padding:1px 5px 5px 5px;
+    font-size:25px;
+    opacity:0.7;
+    cursor:pointer;
+    
+}
+.left{ left:10px;}
+.right{ right:10px;}
+
+#content{
+    width:100%;
+    height:280px;
+    padding:20px;
+}
+
+.left_content{
+    float:left;
+    width:50%;
+}
+.left_content .notice .title{
+    /*리스트 높이 설정 및 텍스트 수직 정렬 */
+    line-height:40px;
+}
+.right_content{
+    width:50%;
+    padding:10px;
+    float:left;
+}
+
+.event_top{
+    background:url(../image/event1.jpeg) no-repeat center;
+    background-size: cover;
+    height:105px;
+    border-radius: 10px;
+    /* 맨 앞에 inset을 넣으면 안쪽 그림자 */
+    box-shadow: 3px 3px 5px #666;
+}
+ .event_bottom{
+    background:url(../image/event2.jpeg) no-repeat center;
+    background-size: cover;
+    height:105px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #666;
+    margin-top:10px;
+} 
+
+/* #footer{
+    background-color:#3b414d;
+    color:#eee;
+    width:100%;
+    height:126px;
+    padding:15px 15px;
+    position:relative;
+}
+
+.foot_text :nth-child(1){
+    position:absolute;
+    top:45%;
+    font-size: 14px;
+}
+.foot_text :nth-child(2){
+    position:absolute;
+    top:70%;
+    font-size: 14px;
+}
+
+.foot_menu li{
+    float:left;
+    padding-right: 10px;
+    font-size: 12px;
+}
+
+.foot_menu :nth-child(2){
+    padding-left: 10px;
+    border-left:1px solid #ccc;
+    border-right:1px solid #ccc;
+}
+
+.foot_menu :nth-child(3){
+    padding-left: 10px;
+    border-right:1px solid #ccc;
+}
+
+.foot_menu :nth-child(4){
+    padding-left: 10px  ;
+} */
+
+#footer{
+    background: #3b414d;
+    padding:20px;
+    color: #eee;
+}
+
+.foot_menu{
+    height:30px;
+    font-size:12px;
+}
+.foot_menu li{
+    float:left;
+    padding:0 20px;
+}
+
+.foot_menu li:nth-child(1){padding-left:0;}
+.foot_menu li:nth-child(2){
+    border-left: 2px solid rgb(249, 249, 151);
+    border-right: 2px solid rgb(249, 249, 151);
+}
+.foot_menu li:nth-child(3){
+    border-right: 2px solid rgb(249, 249, 151);
+}
+.foot_text{
+    color:#bbb;
+    font-weight:800;
+}
+.foot_text p{
+    line-height:30px;
 }
