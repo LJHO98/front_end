@@ -1,0 +1,97 @@
+/* main.css */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#wrap{
+    width:1000px;
+    margin:0 auto;
+    position:relative;
+}
+ul{
+    list-style-type:none;
+}
+#header{
+    width:100%;
+    padding:10px 0;
+    font-size:17px;
+}
+
+#slide{
+    width:100%;
+    position:relative;
+}
+#slide .slide_image{
+    background:url(../image/earth.jpeg) no-repeat center;
+    background-size:cover;
+    height:350px;
+}
+
+.slide_button{
+    padding: 5px 10px 20px 5px;
+}
+
+#slide .button{
+    display:inline-block;
+    width:50px;
+    height:20px;
+    background-color: aqua;
+    border-radius: 10px;
+}
+
+#slide .button:nth-child(1){
+    background-color: blue;
+}
+
+.main_text p{
+    padding:10px 0px;
+    
+}
+
+.main_image{
+    width:100%;
+    height:150px;
+    position:relative;
+    margin-top:10px;
+}
+.image{
+    width:30%;
+    height:150px;
+    float:left;
+    position:relative;
+    left:5%;
+}
+
+.image:nth-child(1){
+    background:url(../image/africa.jpeg) no-repeat center;
+    background-size:contain;
+}
+
+.image:nth-child(2){
+    background:url(../image/amazon.jpeg) no-repeat center;
+    background-size:contain;
+}
+
+.image:nth-child(3){
+    background:url(../image/desert.jpeg) no-repeat center;
+    background-size:contain;
+}
+
+#sub{
+    background-color:dodgerblue;
+    position:fixed;
+    top:150px;
+    left:40px;
+    border-radius:5px;
+}
+
+#list li{
+    font-size:13px;
+    color:white;
+    padding:7px 5px;
+}
+
+
+
