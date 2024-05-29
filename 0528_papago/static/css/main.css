@@ -37,6 +37,7 @@ ul{
 
 #header .menu{
     padding-top:10px;
+    /*line-height*/
     float:left;
     font-size:14px;
     font-weight:bold;
@@ -72,7 +73,7 @@ ul{
 
 #main .left_box{
     display: inline-block;
-    border:1px solid lightgray;
+    border:1px solid lightgreen;
     width:49%;
     height:300px;
     border-radius:10px;
@@ -109,11 +110,48 @@ ul{
     padding:30px 30px;
 }
 
-#main .text_r{
+#main .text_left{
+    position:relative;
+}
+
+#main .text_left span{
+    display: inline-block;
+    font-size:20px;
+    position:absolute;
+    right:30px;
+    bottom:20px;
+}
+
+#main .text_right{
     visibility: hidden;
 }
 
 #main .bottom{
     height:50px;
-    border:1px solid black;
+    position:relative;
+    border-top:1px solid lightgray;
+}
+
+
+#main .bottom_bt{
+    display: inline-block;
+    width:70px;
+    height:48px;
+    border-right:1px solid lightgray;
+    
+}
+
+#main .bottom_left span:last-child{
+    width:120px;
+    position:absolute;
+    right:0;
+    background-color:lightgreen;
+        
+}
+
+#main .bottom_left p{
+    text-align:center;
+    padding:11px 0;
+    font-size:17px;
+    color:white;
 }
