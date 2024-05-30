@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <style>
+        #cont1{
+            width:100%;
+            max-width:1200px;
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            margin:0 auto;
+            /* gap:10px; */
+        }
+        #cont1>img{
+            /* width: calc((1200px - 30px) /4); */
+            width:25%;
+            padding-right:10px;
+            box-sizing: border-box;
+        }
+    </style>
+    <h2> 여러줄 배치하기 </h2>
+    <div id="cont1">
+        <img src="https://loremflickr.com/300/400/faker?radom=1">
+        <img src="https://loremflickr.com/300/400?radom=2">
+        <img src="https://loremflickr.com/300/400?radom=3">
+        <img src="https://loremflickr.com/300/400?radom=4">
+        <img src="https://loremflickr.com/300/400?radom=5">
+        <img src="https://loremflickr.com/300/400?radom=6">
+        <img src="https://loremflickr.com/300/400?radom=7">
+        <img src="https://loremflickr.com/300/400?radom=8">
+        <img src="https://loremflickr.com/300/400?radom=9">
+        <img src="https://loremflickr.com/300/400?radom=10">
+    </div> -->
+
+    <!-- <style>
+        #card_wrap{
+            display:flex;
+            flex-wrap:wrap;
+            width:400px;
+            box-sizing:border-box;
+            row-gap:9px;
+        }
+        .card{
+            width:33.33%;
+            display:flex;
+            flex-direction: column;
+            box-sizing:border-box;
+
+        }
+        .card:nth-child(1), .card:nth-child(4){
+            padding-right:6px;
+        }
+        .card:nth-child(2), .card:nth-child(5){
+            padding-left:3px;
+            padding-right:3px;
+        }
+        .card:nth-child(3), .card:nth-child(6){
+            padding-left:6px;
+        }
+        
+        .card .card_img{
+            width:100%;
+            border-radius:5px;
+            overflow:hidden;
+            
+        }
+        .card .card_img img{
+            width:100%;
+            /*이미지 밑에 여백 제거*/
+            display:block;
+        }
+        .card_text{
+            margin:0;
+            padding-top:5px;
+            -webkit-line-clamp:2; /*화면에 표시할 라인 수*/
+            overflow:hidden; /*overflow - 지정된 크기보다 큰 영역 또는 텍스트, 이미지를 화면에 어떻게 표시할 것인지 설정 */
+            height:42px;
+            /*지정된 크기를 넘은 텍스들은 ...으로 표시*/
+            text-overflow: ellipsis;
+            display:-webkit-box;
+            -webkit-box-orient:vertical;
+
+        }
+        
+
+    </style>
+    <div id="card_wrap">
+        <div class="card">
+            <div class="card_img">
+                <img src="https://loremflickr.com/100/130?random=1" alt="">
+            </div>
+            <p class="card_text">제목을 표시하고 p태그로 문장</p>
+        </div>
+        <div class="card">
+            <div class="card_img">
+                <img src="https://loremflickr.com/100/130?random=2" alt="">
+            </div>
+            <p class="card_text">링크는 A, 이미지는 IMG</p>
+        </div>
+        <div class="card">
+            <div class="card_img">
+                <img src="https://loremflickr.com/100/130?random=3" alt="">
+            </div>
+            <p class="card_text">CSS 스타일 색상 폰트 레이아웃</p>
+        </div>
+        <div class="card">
+            <div class="card_img">
+                <img src="https://loremflickr.com/100/130?random=4" alt="">
+            </div>
+            <p class="card_text">클래스와 아이디로 선택하고 헥사코드</p>
+        </div>
+        <div class="card">
+            <div class="card_img">
+                <img src="https://loremflickr.com/100/130?random=5" alt="">
+            </div>
+            <p class="card_text">첨부된사진5의설명입니다</p>
+        </div>
+        <div class="card">
+            <div class="card_img">
+                <img src="https://loremflickr.com/100/130?random=6" alt="">
+            </div>
+            <p class="card_text">첨부된사진6의설명입니다</p>
+        </div>
+    </div> -->
+
+    <!-- <h2>연습</h2> -->
+    <!-- <style>
+        #wrap{
+            display:flex;
+            flex-direction: column;
+            gap:20px;
+            width:800px;
+        }
+        .text_wrap{
+            width:800px;
+            display:flex;
+            justify-content:space-between
+        }
+
+        .text_box{
+            display: flex;
+            gap:10px;
+        }
+        .text_box .icon{
+            /* line-height:50px; */
+        }
+        .text_box{
+            height:50px;
+        }
+        .text_box .list p{
+            margin:0;
+        }
+        .text_box .list p:nth-child(1){
+            font-size:20px;
+        }
+        
+        .text_box .icon p{
+            margin:0;
+            padding:0 5px;
+        }
+        .text_box .icon{
+            display:flex;
+            align-items: center;
+
+        }
+        .text_box .list{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+    </style>
+    <div id="wrap">
+        <div class="text_wrap">
+            <div class="text_box left_box">
+                <div class="icon">
+                    <p>●</p>
+                </div>
+                <div class="list">
+                    <p>똑똑한 인사정보 관리</p>
+                    <p>한 곳에서 관리하는 인사 및 개인정보</p>
+                </div>
+            </div>
+            <div class="text_box right_box">
+                <div class="icon">
+                    <p>●</p>
+                </div>
+                <div class="list">
+                    <p>똑똑한 인사정보 관리</p>
+                    <p>한 곳에서 관리하는 인사 및 개인정보</p>
+                </div>
+            </div>
+        </div>
+        <div class="text_wrap">
+            <div class="text_box left_box">
+                <div class="icon">
+                    <p>●</p>
+                </div>
+                <div class="list">
+                    <p>똑똑한 인사정보 관리</p>
+                    <p>한 곳에서 관리하는 인사 및 개인정보</p>
+                </div>
+            </div>
+            <div class="text_box right_box">
+                <div class="icon">
+                    <p>●</p>
+                </div>
+                <div class="list">
+                    <p>똑똑한 인사정보 관리</p>
+                    <p>한 곳에서 관리하는 인사 및 개인정보</p>
+                </div>
+            </div>
+        </div>
+        <div class="text_wrap">
+            <div class="text_box left_box">
+                <div class="icon">
+                    <p>●</p>
+                </div>
+                <div class="list">
+                    <p>똑똑한 인사정보 관리</p>
+                    <p>한 곳에서 관리하는 인사 및 개인정보</p>
+                </div>
+            </div>
+            <div class="text_box right_box">
+                <div class="icon">
+                    <p>●</p>
+                </div>
+                <div class="list">
+                    <p>똑똑한 인사정보 관리</p>
+                    <p>한 곳에서 관리하는 인사 및 개인정보</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <style>
+        #box{
+            display:flex;
+            width:1000px;
+            padding:30px 20px;
+            box-sizing: border-box;
+            flex-wrap:wrap;
+            background-color: #eee;
+            row-gap:40px;
+            flex-direction: column;
+            height:350px;
+        }
+        .list{
+            width:50%;
+            display: flex;
+            align-items: center;
+        }
+        .mark{
+            padding:10px;
+        }
+        .title{
+            font-weight:800;
+        }
+        .detail{color:#999}
+    </style>
+<h2>실습2</h2>
+<div id="box">
+    <div class="list">
+        <div class="mark">●</div>
+        <div class="text">
+            <div class="title">똑똑한 인사정보 관리</div>
+            <div class="detail">한 곳에서 관리하는 인사 및 개인정보</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="mark">●</div>
+        <div class="text">
+            <div class="title">회사 문서 관리</div>
+            <div class="detail">회사의 다양한 문서 및 증명서 보관</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="mark">●</div>
+        <div class="text">
+            <div class="title">구성원 근무 휴가 관리</div>
+            <div class="detail">우리회사 문화에 알맞는 근무와 휴가 관리</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="mark">●</div>
+        <div class="text">
+            <div class="title">할 일 요청 및 공지사항 작성</div>
+            <div class="detail">한눈에 들어오는 할 일과 회사 소식</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="mark">●</div>
+        <div class="text">
+            <div class="title">워크플로우(전자결재)</div>
+            <div class="detail">회사의 모든 의사결정과 커뮤니케이션</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="mark">●</div>
+        <div class="text">
+            <div class="title">외부 서비스 연동</div>
+            <div class="detail">구글 혹은 슬랙과 제품내 주요 기능 연동을 통한 편의성 제공</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="mark">●</div>
+        <div class="text">
+            <div class="title">HR 인사이트(Analytics)</div>
+            <div class="detail">심층 분석되 회사HR 데이터 확인</div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="mark">●</div>
+        <div class="text">
+            <div class="title">강력한 보안</div>
+            <div class="detail">국제표준화기구에서 제정한 정보보호 관리체계 인증</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
