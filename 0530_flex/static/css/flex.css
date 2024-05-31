@@ -6,9 +6,10 @@
 
 
 #wrap{
-    display:flex;
+    margin:0 auto;
+    /* display:flex; */
     width:1000px;
-    height:700px;
+    /* height:700px; */
     box-sizing: border-box;
     padding:20px 0;
     border:1px solid #ccc;

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+// 변수 - 데이터 저장된, 저장될 수 있는 메모리(ram) 공간
+        document.write("나는 자바스크립트입니다. ")
+        num=10;
+        document.write(num);
+//자바스크립트는 변수에 자료형을 입력하지 않아도 알아서 저장하기 떄문에
+//자료형과 상관없이 원하는 데이터를 넣어주기만 하면 된다. 밑에처럼 바꾸는 것도 가능.
+        melon=100;
+        melon="나는 멜론";
+
+        num=100;
+        document.write("<br>");
+        document.write(num * 5);
+
+        width=45;
+        height=15;
+
+        document.write("<br>");
+        document.write("사각형의 너비는 ");
+        document.write(width);
+        document.write(" 사각형의 높이는 " + height); //+ : 문자열 합치기
+        document.write("<br>");
+        document.write("사각형의 넓이는 " + width*height);
+        document.write("<hr>");
+
+        kor=89;
+        eng=94;
+        mat=78;
+
+        document.write("국어 : " + kor + ", " +"영어 : " + eng + ", " + "수학 : " + mat + "<br>");
+        document.write("총점 : " + (kor+eng+mat))
+
+        document.write("<hr>");
+
+        커피주문 = 3;
+        수박주스주문 = 4;
+        아메리카노 = 1500;
+        수박주스 = 2000;
+
+        커피총액 = 커피주문 * 아메리카노;
+        주스총액 = 수박주스주문 * 수박주스;
+        음료총액 = 커피총액 + 주스총액;
+        document.write("커피 총 주문 금액 : " + 커피총액 + ", " + "수박주스 총 주문 금액 : " + 주스총액 + "<br>");
+        document.write("음료 총 주문 금액 : " + 음료총액);
+
+        document.write("<hr>");
+
+        redCup = 10;
+        blueCup = 20;
+        emptyCup = 0;
+        emptyCup = redCup;
+        redCup = blueCup;
+        blueCup = emptyCup;
+
+        // 데이터 입력 방법 1.
+        // prompt 를 통해서 데이터를 입력할 수 있다.
+        // prompt로 입력한 데이터는 문자열이다.
+        // 숫자로 계산하려면 숫자로 강제 변환을 해야한다.
+        // 숫자로 변환이 가능한 문자열만 할 수 있다.
+        // parseInt( 문자열 ) -> 정수로 변환 , "50aaa" - > 50
+        // parseFloat( 문자열 ) -> 실수로 변환
+        // Number(문자열) -> 숫자로 변환 , 문자열에 단하나의 문자도 있으면 안된다.
+        // kor = parseInt(prompt("국어점수"));
+        // mat = parseInt(prompt("수학점수"));
+        // eng = Number(prompt("영어점수"));
+        // total = kor + mat + eng;
+        // document.write("<br> 국어 : " + kor + "수학 : " + mat + "영어 : "+eng);
+        // document.write("<br> 총점 : " + total);
+
+        // document.write("<hr>");
+
+        // 실습 3.
+        name = prompt("이름을 입력하세요.");
+        adress = prompt("현재 거주하고 있는 도시명을 입력하세요.");
+        birth = prompt("생년월일을 입력하세요.");
+        document.write("이름 : " + name + "<br>" + "거주 도시명 : " + adress + "<br>" + "생년월일 : " + birth);
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
