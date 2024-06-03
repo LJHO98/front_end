@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //변수 - 단일 데이터가 저장된 메모리(ram) 공간
+        //변수의 이름은 의미있게 카멜 표기법으로 작성하는게 일반적
+        //변수명은 반드싀 문자로 시작, 시스템예약어를 사용하면 안된다.
+
+        //자바스크립트 출력
+        //1. document.write(출력할 내용);
+        //document -> HTML 문서
+        //write -> HTML문서에서 body태그에 쓰기해라
+        //         HTML문서에서 body엘리먼트(body객체) - 자바스크립트에서의 태그 표현
+
+        //자바스크립트 입력
+        //1. prompt();
+        //prompt -> 현재 페이지에 내부 창을 만들어서 화면에 표시하는 방법
+        // fuelUp = Number(prompt("주유 휘발유량 : "));
+        // gasolineCost = 1636;
+
+        // payment = fuelUp * 1636;
+
+        // document.write("상품명 : 휘봘유<br>");
+        // document.write("판매량 : " + fuelUp + "L" + "<br>");
+        // document.write("총 주유금액 : " + payment);
+
+        //문제1. 삼각형 넓이
+        bottomSide = parseInt(prompt("밑변의 길이를 입력해주세요."));
+        height = parseInt(prompt("높이를 입력해주세요."));
+        triangleArea = Math.floor(bottomSide * height / 2);
+        document.write("삼각형의 넓이 : " + triangleArea);
+        //Math.floor(숫자) -> 정수만 추출
+        //Math.round(숫자) -> 소수점 이하를 반올림
+        //숫자가 저장된 변수 num = 20.345;
+        //20.345 -> 20.3
+        //소수점 몇자리까지 표현
+        //num.toFixed(1); -> 20.3
+        //변수명.toFixed(소수점 자릿수); -> toFixed 의 결과값은 문자열이다.
+        //parseFloat(변수명.toFixed(소수점 자릿수)); -> 실수라는 숫자로 사용가능
+
+        document.write("<ul><li>1번리스트</li><li>2번리스트</li></ul>");
+
+    </script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>
