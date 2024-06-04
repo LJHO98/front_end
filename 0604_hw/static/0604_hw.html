@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 1번 과제
+        // num1 = Number(prompt("첫번째 정수"));
+        // num2 = Number(prompt("두번째 정수"));
+        // num3 = Number(prompt("세번째 정수"));
+        // hightNumber = 0;
+        // numberName = 0;
+
+        // if( (num1 > num2) && (num1 > num3) ){
+        //     highNumber = num1;
+        //     numberName = "첫번째";
+        // }else if( (num3 > num1) && (num3 > num2)){
+        //     highNumber = num3;
+        //     numberName = "세번째";
+        // }else{
+        //     highNumber = num2;
+        //     numberName = "두번째";
+        // }
+        // document.write("가장 큰 수는 " +numberName + "수 : " + highNumber);
+
+        //2번 과제
+        comDice1 = Math.floor(Math.random() * 6) + 1;
+        comDice2 = Math.floor(Math.random() * 6) + 1;
+        userDice1 = Math.floor(Math.random() * 6) + 1;
+        userDice2 = Math.floor(Math.random() * 6) + 1;
+        comDiceSum = comDice1 + comDice2;
+        userDiceSum = userDice1 + userDice2;
+        console.log(comDiceSum);
+        console.log(userDiceSum);
+        document.write(`컴퓨터 주사위1 : ${comDice1} , 컴퓨터 주사위2 : ${comDice2} <br> 유저 주사위1 : ${userDice1} , 유저 주사위2 : ${userDice2}<br>` );
+
+
+        if((comDiceSum < userDiceSum) || (userDice1 == userDice2)){
+            document.write("유저의 승리!");
+        }else if(comDiceSum == userDiceSum){
+            document.write("무승부");
+        }else{
+            document.write("유저의 패배ㅠㅠ");
+        }
+        
+
+
+
+
+
+
+
+
+    </script>
+    
+</head>
+<body>
+    <!-- 1. 세개의 정수를 입력받아서 가장 큰 수를 출력하세요. 단, 같은 숫자 입력 X -->
+    <!-- 2. 주사위 게임 컴퓨터와 함께 
+         -컴퓨터와 내가 각각 주사위 2개씩 던진다.
+         -주사위의 합이 큰 쪽이 이긴다.
+         -단, 주사위가 같은 값이면 이긴다.
+         예) 컴 : 1, 5  나 : 2, 3 -> 나의 패배
+             컴 : 5, 6  나 : 1, 1 -> 나의 승리
+    
+    -->
+</body>
+</html>
