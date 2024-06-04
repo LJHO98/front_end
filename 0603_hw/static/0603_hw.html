@@ -7,17 +7,17 @@
     
     <script>
         //과제1.
-        // amountIntake = Number(prompt("하루 소주 섭취량(잔) : "));
-        // lifeShortening = (amountIntake * 2) * 7300;
-        // day = lifeShortening / 1440;
+        amountIntake = Number(prompt("하루 소주 섭취량(잔) : "));
+        lifeShortening = (amountIntake * 2) * 7300;
+        day = lifeShortening / 1440;
         // lifeShortening = lifeShortening - (Math.floor(day)*1440);
-        // hour = lifeShortening / 60;
+        hour = lifeShortening / 60;
         // lifeShortening = lifeShortening - (Math.floor(hour)*60);
-        // minute = Math.floor(lifeShortening);
-        // document.write("소주 섭취로 인해 단축된 수명 : ");
-        // document.write(Math.floor(day) + "일 ");
-        // document.write(Math.floor(hour) + "시간 ");
-        // document.write(Math.floor(minute) + "분");
+        minute = Math.floor(lifeShortening);
+        document.write("소주 섭취로 인해 단축된 수명" + "<br>");
+        document.write(Math.floor(day) + "일 " + "<br>");
+        document.write(Math.floor(hour) + "시간 " + "<br>");
+        document.write(minute + "분");
         
         //과제2.
         // dice1 = Math.floor(Math.random() * 6) + 1;

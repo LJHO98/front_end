@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 자바스크립트 조건문 - 조건에 따라 코드를 실행 시키는 제어문이다.
+        // 조건문 - if~ else , switch문
+        // if문은 조건식이 참 이냐 거짓이냐에따라 코드를 실행
+        // switch문은 선택문 입력한 값에 맞는 코드를 선택하여 실행
+
+        // if문 기본 구조
+        // if(조건식) { 참일 경우 실행할 내용}
+
+        // if(조건식){참일 경우 실행할 내용}
+        // else{거짓일 경우 실행할 내용}
+
+        // if(조건식){참 내용}
+        // else{ if(조건식){참 내용} else{거짓 내용}}
+
+        //if(조건식){참 내용}
+        //else if(조건식){참 내용}
+        //else {거짓 내용}
+
+        // if(10>5) {
+        //     alert("5보다 크다");
+        //     alert("두번째 코드");
+        //     alert("세번째 코드");
+        // }
+        
+        // addr = "대전광역시";
+        // if (addr === "대전광역시"){
+        //     document.write("구를 선택하세요 ");
+        //     document.write("대덕구, 동구, 중구, 서구, 유성구");
+        // }
+        // else{
+        //     document.write("올바르지 않은 지역 선택입니다.");
+        //     document.write("다시 선택하세요");
+        // }
+
+        // tall = 143;
+        // if (tall >= 140){
+        //     document.write("바이킹 탑승 가능");
+        // }else{
+        //     document.write("바이킹 탑승 불가");
+        // }
+
+        // if문 작성할때 참과 거짓에 실행할 코드가 하나라면 중괄호 생략가능
+        // 실행할 코드가 2개 이상이라면 반드시 중괄호로 묶어야 한다.
+        // result = (tall >= 140) ? "탑승가능" : "탑승 불가";
+        // document.write(result);
+
+        // result = "";// 변수의 초기화
+        // 요금 = 0; //변수의 초기화
+        // if(tall >= 140)
+        //     result = "탑승가능";
+        // else
+        //     result="탑승불가";
+        // document.write(result+" , " + 요금);
+        // document.write('<hr>'); //'' : 변경 금지 , "" : 변경 가능
+
+        // num1 = Number(prompt("1번 정수"));
+        // num2 = Number(prompt("두번째 정수"));
+        // if(num1>num2)
+        //     document.write("두 수중에 큰수는 num1 : " + num1 + "입니다.");
+        // else if(num1 == num2)
+        //     document.write("같다");
+        // else
+        //     document.write("두 수중에 큰수는 num2 : " + num2 + "입니다.");
+
+
+        // coin = Math.floor(Math.random()*2) + 1;
+
+        // user = Number(prompt("1.앞면 2.뒷면   동전 앞면뒷면 선택하세요"));
+
+        // if(coin == user){
+        //     document.write("정답!");
+        // }else{
+        //     document.write("땡!!");
+        // }
+
+        // 주사위 1개를 던진다. 주사위의 값이 4 또는 6이 나오면 만원을 받을 수 있다.
+        // dice = Math.floor(Math.random() * 6) + 1;
+        
+        // if(dice == 4 || dice == 6)
+        //     document.write(`10,000원을 받았다. (${dice})`);
+        // else
+        //     document.write("꽝");
+        
+        //가위바위보
+        // computer = Math.floor(Math.random() * 3) + 1;
+        // console.log(computer); 
+        // user = Number(prompt("1. 가위 2. 바위 3. 보"));
+        // document.write("컴퓨터가 낸거 : " + computer  + " , " + "내가 낸거 : " + user + "<br>");
+        // if(computer == 1){
+        //     if(user == 2){
+        //         document.write("USER WIN!");
+        //     } 
+        //     else if(user == 1){
+        //         document.write("TIE!");
+        //     }
+        //     else{
+        //         document.write("USER LOSE");
+        //     }
+        // }else if(computer == 2){
+        //     if(user == 3){
+        //         document.write("USER WIN!");
+        //     } 
+        //     else if(user == 2){
+        //         document.write("TIE!");
+        //     }
+        //     else{
+        //         document.write("USER LOSE");
+        //     }
+        // }else{
+        //     if(user == 1){
+        //         document.write("USER WIN!");
+        //     } 
+        //     else if(user == 3){
+        //         document.write("TIE!");
+        //     }
+        //     else{
+        //         document.write("USER LOSE");
+        //     }
+        // }
+        // if((computer == 1 && user == 2) || (computer == 2 && user == 3) || (computer == 3 && user == 1)){
+        //     document.write("USER WIN!");
+        // }
+        // else if((computer == 1 && user == 3) || (computer == 2 && user == 1) || (computer == 3 && user == 2)){
+        //     document.write("USER LOSE");
+        // }
+        // else{
+        //     document.write("TIE");
+        // }
+
+        // if(computer == user){
+        //     document.write("비김");
+        // }else if((computer == 1 && user == 2) || (computer == 2 && user == 3) || (computer == 3 && user == 1)){
+        //     document.write("나의 승리");
+        // }else{
+        //     document.write("나의 패배.....");
+        // }
+
+        // 결과 = user - computer;
+        // if( 결과 == 0){
+        //     document.write("비김");
+        // }else if(결과 == 1 || 결과 == -2){
+        //     document.write("나의 승리");
+        // }else{
+        //     document.write("나의 패배...");
+        // }
+        
+        function start(){
+            // alert(" 오!! 클릭했네!!!");
+            document.getElementById('출력위치').innerText="엄";
+        }
+        
+
+        
+    </script>
+    <style>
+        .bt{
+            border-radius: 10px;
+            background-color: black;
+            color:white;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- onclick="start()" 는 버튼태그를 클랙하면 자바스크립트에서 start라는 이름의 함수를 실행해라 라는 뜻이다. -->
+    <button class="bt" onclick="start()">나를 클릭해줘</button>
+    <h1 ID="출력위치"></h1>
+</body>
+</html>
