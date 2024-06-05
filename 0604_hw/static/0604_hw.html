@@ -32,18 +32,28 @@
         userDice2 = Math.floor(Math.random() * 6) + 1;
         comDiceSum = comDice1 + comDice2;
         userDiceSum = userDice1 + userDice2;
-        console.log(comDiceSum);
-        console.log(userDiceSum);
         document.write(`컴퓨터 주사위1 : ${comDice1} , 컴퓨터 주사위2 : ${comDice2} <br> 유저 주사위1 : ${userDice1} , 유저 주사위2 : ${userDice2}<br>` );
 
 
         if((comDiceSum < userDiceSum) || (userDice1 == userDice2)){
             document.write("유저의 승리!");
         }else if(comDiceSum == userDiceSum){
-            document.write("무승부");
+            if(comDice1 == comDice2){
+                document.write("유저의 패배ㅠㅠ");
+            }
+            else if(comDice1 == comDice2){
+                document.write("유저의 승리!");
+            }
+            else{
+                document.write("무승부");
+            }
+        }else if((comDiceSum > userDiceSum) || (comDice1 == comDice2)){
+            document.write("유저의 패배ㅠㅠ");
         }else{
             document.write("유저의 패배ㅠㅠ");
         }
+
+
         
 
 
