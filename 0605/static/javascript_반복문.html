@@ -119,23 +119,30 @@
         //컴퓨터가 숫자 맞추기
         var user = Number(prompt("내가 제시한 숫자"));
         var low = 1;
-        var top = 50;
+        var high = 50;
         var n = 0;
+        var com = Math.floor(Math.random() * high) + low;
+        console.log(com);
+
         while(1){
-            
-            var com = Math.floor(Math.random() * top) + low;
-            if(com < user){
-                low = com + 1;
-                document.write("Up");
-                n++;
-            }else if(com > user){
-                top = com;
-                document.write("Down");
-                n++;
-            }
-            else{
+            if(com == user){
                 document.write(`${n}번째만에 정답!!`);
                 break;
+            }else if(com > user){
+                
+                high = com - low;
+                document.write("Down<br>");
+                com = Math.floor(Math.random() * high) + low;
+                console.log(com);
+                n++;
+                
+            }
+            else{
+                low = com + 1;
+                document.write("Up<br>");
+                com = Math.floor(Math.random() * high) + low;
+                console.log(com);
+                n++;
             }
         }
 
