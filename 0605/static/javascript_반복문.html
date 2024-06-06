@@ -117,32 +117,62 @@
         // }    
 
         //컴퓨터가 숫자 맞추기
-        var user = Number(prompt("내가 제시한 숫자"));
-        var low = 1;
-        var high = 50;
+        var user = Number(prompt("내가 제시한 숫자(1~50)"));
+        var min = 1;
+        var max = 50;
         var n = 0;
-        var com = Math.floor(Math.random() * high) + low;
-        console.log(com);
+        var com = Math.floor(Math.random() * max) + min;
+        var total = 0;
+
+        
 
         while(1){
+            if(user > 50){
+                document.write("숫자가 너무 큽니다.");
+                break;
+            }
+            console.log(com);
             if(com == user){
                 document.write(`${n}번째만에 정답!!`);
                 break;
             }else if(com > user){
-                
-                high = com - low;
-                document.write("Down<br>");
-                com = Math.floor(Math.random() * high) + low;
-                console.log(com);
+                max = com - 1;
+
+                if((max - min) > 0){
+                    total = max - min;
+                    if(total == 1){
+                        total = 2;
+                    }
+                    console.log(total);
+                }
+                else{
+                    total = 2;
+                    
+                }
+                console.log(total);
+                console.log(min);
+                var com = Math.floor(Math.random() * total) + min;
+                n++;
+            }else{
+                if(com>min){
+                min = com + 1;
+                }
+
+                if((max - min) > 0){
+                    console.log(max);
+                    console.log(min);   
+                    total = max - min;
+                    if(total == 1){
+                        total = 2;
+                    }
+                    console.log(total);
+                }else{
+                    total = 2;
+                }
                 n++;
                 
-            }
-            else{
-                low = com + 1;
-                document.write("Up<br>");
-                com = Math.floor(Math.random() * high) + low;
-                console.log(com);
-                n++;
+                console.log(min);
+                var com = Math.floor(Math.random() * total) + min;
             }
         }
 
