@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // //문제 1.
+        // for(var i = 1; i <= 100; i++){
+        //     if(i % 3 == 0 && i % 8 == 0){
+        //         document.write("3배,8배<br>");
+        //     }else if(i % 8 == 0){
+        //         document.write("8배<br>");
+        //     }else if(i % 3 == 0){
+        //         document.write("3배<br>");
+        //     }else{
+        //         document.write(i + "<br>");
+        //     }
+        // }
+        
+        
+        //문제 2.
+        // var n = 0;
+        // while(1){
+        //     var pass1 = Math.floor(Math.random() * 9) + 1;
+        //     var pass2 = Math.floor(Math.random() * 9) + 1;
+        //     var pass3 = Math.floor(Math.random() * 9) + 1;
+        //     var pass4 = Math.floor(Math.random() * 9) + 1;
+        //     var rPass1 = 0;
+        //     var rPass2 = 0;
+        //     var rPass3 = 0;
+        //     var rPass4 = 0;
+        //     var passSum = 0;
+        //     var rPassSum = 0;
+            
+        //     if(pass1 >= pass4 + 2 && pass2 < pass3){
+        //         if(pass1 != pass2 && pass2 != pass4 && pass3 != pass1 && pass3 != pass4){
+        //             rPass1 = pass4;
+        //             rPass2 = pass3;
+        //             rPass3 = pass2;
+        //             rPass4 = pass1;
+
+        //             passSum = (pass1*1000) + (pass2*100) + (pass3*10) + pass4;
+        //             rPassSum = (rPass1*1000) + (rPass2*100) + (rPass3*10) + rPass4;
+
+        //             if(passSum+rPassSum == 16456){
+        //                 document.write(`비밀번호는 ${pass1}${pass2}${pass3}${pass4} 입니다.<br>`);
+        //                 document.write("시도횟수 : " + n);
+        //                 break;
+        //             }
+        //         }
+        //     }
+        //     n++;
+
+        // }
+            var n = 0;
+            for(var num1 = 1; num1 <= 9; num1++){
+                for(var num2 = 1; num2 <= 9; num2++){
+                    for(var num3 = 1; num3 <= 9; num3++){
+                        for(var num4 = 1; num4 <= 9; num4++){
+                            if(num1 >= num4 + 2 && num2 < num3){
+                                if(num1 != num2 && num2 != num4 && num3 != num1 && num3 != num4){
+                                    if(((num1*1000) + (num2*100) + (num3*10) + num4) + ((num4*1000) + (num3*100) + (num2*10) + num1) == 16456)
+                                        document.write(`${num1}${num2}${num3}${num4}<br>`);
+                                }
+                            }
+                            n++;
+                        }
+                    }
+                }
+            }
+            document.write("시도횟수 : " + n);
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

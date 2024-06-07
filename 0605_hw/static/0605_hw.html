@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //컴퓨터가 숫자 맞추기
+        var user = Number(prompt("내가 제시한 숫자(1~50)"));
+        var min = 1;
+        var max = 50;
+        var n = 0;
+        var com = Math.floor(Math.random() * max) + min;
+        var total = 0;
+
+        
+
+        while(1){
+            if(user > 50 || user <= 0){
+                document.write("숫자가 작거나 너무 큽니다.");
+                break;
+            }
+            console.log(com);
+            if(com == user){
+                document.write(`${n}번째만에 정답!!`);
+                break;
+            }else if(com > user){
+                document.write("DOWN<br>");
+                max = com - 1;
+                total = max - min + 1;
+                // if((max - min) > 0){
+                //     total = max - min;
+                //     if(total == 1){
+                //         total = 2;
+                //     }
+                // }
+                // else{
+                //     total = 2;
+                    
+                // }
+                var com = Math.floor(Math.random() * total) + min;
+                n++;
+            }else{
+                // if(com>min){
+                document.write("UP<br>");
+                min = com + 1;
+                total = max - min + 1;
+                // }
+
+                // if((max - min) > 0){   
+                //     total = max - min;
+                //     if(total == 1){
+                //         total = 2;
+                //     }
+                // }else{
+                //     total = 2;
+                // }
+                n++;
+                var com = Math.floor(Math.random() * total) + min;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

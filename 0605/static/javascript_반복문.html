@@ -127,8 +127,8 @@
         
 
         while(1){
-            if(user > 50){
-                document.write("숫자가 너무 큽니다.");
+            if(user > 50 || user <= 0){
+                document.write("숫자가 작거나 너무 큽니다.");
                 break;
             }
             console.log(com);
@@ -136,6 +136,7 @@
                 document.write(`${n}번째만에 정답!!`);
                 break;
             }else if(com > user){
+                document.write("DOWN<br>");
                 max = com - 1;
 
                 if((max - min) > 0){
@@ -155,6 +156,7 @@
                 n++;
             }else{
                 if(com>min){
+                document.write("UP<br>");
                 min = com + 1;
                 }
 
