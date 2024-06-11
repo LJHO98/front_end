@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calc(op){
+            var n1 = Number(document.getElementById("num1").value);
+            var n2 = Number(document.querySelector("#num2").value);
+            var result = 0;
+
+            switch(op){
+                case '+': result = n1 + n2;
+                    break;
+                case '-': result = n1 - n2;
+                    break;
+                case '*': result = n1 * n2;
+                    break;
+                case '/': result = n1 / n2;
+                    break;
+            }
+            document.querySelector("#mResult").innerHTML = result;
+        }
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <hr>
+    <button onclick="calc('+')">더하기</button>
+    <button onclick="calc('-')">빼기</button>
+    <button onclick="calc('*')">곱하기</button>
+    <button onclick="calc('/')">나누기</button>
+
+    <div id="mResult"></div>
+
+</body>
+</html>

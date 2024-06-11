@@ -1,0 +1,27 @@
+#remote{
+    margin:0 auto;
+    width:500px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.button{
+    box-sizing: border-box;
+    width: 160px;
+    border:1px solid black;
+    text-align: center;
+    line-height:200px;
+    cursor:pointer;
+    font-size: 30px;
+}
+
+.button:first-child{
+    background-color: red; color:white;
+}
+.button:nth-child(2), .button:nth-child(5){
+    background-color: yellow;
+}
+.button:nth-child(3), .button:nth-child(4){
+    background-color: green; color:white;
+}
