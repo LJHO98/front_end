@@ -23,3 +23,4 @@ function randomOp(){
     var number = randomOp();
     document.getElementById("result").innerHTML = number;
 }
+
