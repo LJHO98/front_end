@@ -1,0 +1,31 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+ul{
+    list-style-type: none;
+}
+input{padding-left:10px}
+
+#wrap{
+    width:800px;
+    margin:0 auto;
+}
+
+#todo_wrap{
+    text-align: center;
+}
+#todoList{
+    display:flex;
+    justify-content: space-between;
+}
+.todoTime, .todoState{
+    width:200px;
+}
+.todo{
+    width:300px;
+}
+#enroll{
+    cursor:pointer;
+}
