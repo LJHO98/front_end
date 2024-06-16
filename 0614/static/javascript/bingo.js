@@ -4,6 +4,7 @@ let playMinute = 0;
 let playSecond = 0;
 let time = 0; // setInterval의 핸들값;
 let bingo = []; // 빙고 배열
+let timeText = '';
 
 
 $(function(){
@@ -22,6 +23,9 @@ $(function(){
 });
 
 function bingoCheck(){
+    if(endCount >= 5){ 
+        return;
+    }
     // jQuery에서 css 넣는 방법 - .css('속성','값');
     $(this).css('background', 'black');
     $(this).css('color', 'white');
@@ -36,6 +40,98 @@ function bingoCheck(){
         가로 세로 대각선 빙고인지 확인하는 내용과
         빙고가 5개 완성되면 게임 끝나게 하기
     */
+    
+    bingoRow(idx);
+    bingoCol(idx);
+    bingoDiag(idx);
+
+    $("#ok").text(endCount);
+
+    if(endCount >= 5){
+        end();
+    }
+}
+
+function bingoRow(idx){
+    if(idx > 0 && idx < 5){
+        if(bingo[0]==0 && bingo[1]==0 && bingo[2]==0 && bingo[3]==0 && bingo[4]==0){
+            endCount += 1;
+            console.log(endCount);
+            }
+    }
+    if(idx > 4 && idx < 10){
+        if(bingo[5]==0 && bingo[6]==0 && bingo[7]==0 && bingo[8]==0 && bingo[9]==0){
+            endCount += 1;
+            console.log(endCount);
+            }
+    }
+    if(idx > 9 && idx < 15){
+        if(bingo[10]==0 && bingo[11]==0 && bingo[12]==0 && bingo[13]==0 && bingo[14]==0){
+            endCount += 1;
+            console.log(endCount);
+            }
+    }
+    if(idx > 16 && idx < 20){
+        if(bingo[15]==0 && bingo[16]==0 && bingo[17]==0 && bingo[18]==0 && bingo[19]==0){
+            endCount += 1;
+            console.log(endCount);
+            }
+    }
+    if(idx > 21 && idx < 25){
+        if(bingo[20]==0 && bingo[21]==0 && bingo[22]==0 && bingo[23]==0 && bingo[24]==0){
+            endCount += 1;
+            console.log(endCount);
+            }
+    }
+}
+
+function bingoCol(idx){
+    if(idx == 0 || idx % 5 == 0){
+        if(bingo[0]==0 && bingo[5]==0 && bingo[10]==0 && bingo[15]==0 && bingo[20]==0){
+            endCount += 1;
+            console.log(endCount);
+        }
+    }
+    if(idx == 1 || idx % 5 == 1){
+        if(bingo[1]==0 && bingo[6]==0 && bingo[11]==0 && bingo[16]==0 && bingo[21]==0){
+            endCount += 1;
+            console.log(endCount);
+        }
+    }
+    if(idx == 2 || idx % 5 == 2){
+        if(bingo[2]==0 && bingo[7]==0 && bingo[12]==0 && bingo[17]==0 && bingo[22]==0){
+            endCount += 1;
+            console.log(endCount);
+        }
+    }
+    if(idx == 3 || idx % 5 == 3){
+        if(bingo[3]==0 && bingo[8]==0 && bingo[13]==0 && bingo[18]==0 && bingo[23]==0){
+            endCount += 1;
+            console.log(endCount);
+        }
+    }
+    if(idx == 4 || idx % 5 == 4){
+        if(bingo[4]==0 && bingo[9]==0 && bingo[14]==0 && bingo[19]==0 && bingo[24]==0){
+            endCount += 1;
+            console.log(endCount);
+        }
+    }
+}
+
+function bingoDiag(idx){
+    if(idx != 0 && idx % 4 == 0 && idx != 24){
+        if(bingo[4]==0 && bingo[8]==0 && bingo[12]==0 && bingo[16]==0 && bingo[20]==0){
+            endCount += 1;
+            console.log(endCount);
+            console.log(idx % 4);
+        }
+    }
+    if(idx == 0 || idx % 6 == 0){
+        if(bingo[0]==0 && bingo[6]==0 && bingo[12]==0 && bingo[18]==0 && bingo[24]==0){
+            endCount += 1;
+            console.log(endCount);
+        }
+    }
 }
 
 function start(){
@@ -54,7 +150,7 @@ function start(){
         }
         var secondText = playSecond <=9 ? '0' + playSecond : playSecond;
         var minuteText = playMinute <=9 ? '0' + playMinute : playMinute;
-        var timeText = `${minuteText}:${secondText}`;
+        timeText = `${minuteText}:${secondText}`;
         $("#playTime").text(timeText);
     }, 1000); // 1000은 1초이다.
 
@@ -62,6 +158,14 @@ function start(){
     draw(); // 화면에 출력하기
     $(".num").click(bingoCheck);
 }
+
+function end(){
+    clearInterval(time);
+    alert(`빙고 끝! , 플레이타임 - ${timeText}`);
+    $(".boardBox").css("opacity", 0.5);
+}
+
+
 
 function Init(){
     while(bingo.length != 25){
