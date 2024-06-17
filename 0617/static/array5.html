@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        //배열에 배열을 넣는다. - 2차원 배열
+        // let stdScore = [
+        //     [50, 18, 15, 78, 89],
+        //     [60, 74, 96, 34, 45],
+        //     [90, 64, 61, 48, 29]
+        // ];
+        // console.log(stdScore[0][1]);
+        
+        // for(var i=0; i<3; i++){
+        //     for(var k=0; k<5; k++)
+        //         document.write(stdScore[i][k]+"&nbsp;");
+        // }
+
+        let pk = [new Array(15).fill(0), new Array(15).fill(0), new Array(15).fill(0), new Array(20).fill(0)];
+
+        for(var i=0; i<pk.length; i++){
+            for(var j=0; j<pk[i].length; j++){
+                document.write(pk[i][j]+"&nbsp;");
+            }
+            document.write("<br>");
+        }
+
+        let num = [ [10,20,30,40], [1,4,5], [23, 45, 56, 3, 9, 5]];
+        let tot = new Array(3).fill(0);
+        
+        for(var i=0; i<num.length; i++){
+            for(var j=0; j<num[i].length; j++){
+                tot[i]+=num[i][j];
+            }
+            document.write(`num[${i}]번째 행의 총합은 ${tot[i]}입니다. <br>`);
+        }
+
+    </script>
+</head>
+<body>
+    
+
+</body>
+</html>
