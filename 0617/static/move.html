@@ -8,11 +8,11 @@
     <script>
         const board=[ //14행 21열
             [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+            [1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1],
+            [1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1],
+            [1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1],
+            [1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,1],
+            [1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1],
             [1,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,1],
             [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
             [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
@@ -56,53 +56,50 @@
                     if(board[y-1][x]==1){
                         break;
                     }
-                    board[y][x] = 0;
-                    $("td").eq(y*21+x).removeClass("me");
-                    $("td").eq(y*21+x).addClass("blank");
+                    remove();
                     y--;
-                    board[y][x]=2;
-                    $("td").eq(y*21+x).removeClass("blank");
-                    $("td").eq(y*21+x).addClass("me");
+                    add();
                     break;
                 case 65:
                     if(board[y][x-1]==1){
                         break;
                     }
-                    board[y][x] = 0;
-                    $("td").eq(y*21+x).removeClass("me");
-                    $("td").eq(y*21+x).addClass("blank");
+                    remove();
                     x--;
-                    board[y][x]=2;
-                    $("td").eq(y*21+x).removeClass("blank");
-                    $("td").eq(y*21+x).addClass("me");
+                    add();
                     break;
                 case 83:
                     if(board[y+1][x]==1){
                         break;
                     }
-                    board[y][x] = 0;
-                    $("td").eq(y*21+x).removeClass("me");
-                    $("td").eq(y*21+x).addClass("blank");
+                    remove();
                     y++;
-                    board[y][x]=2;
-                    $("td").eq(y*21+x).removeClass("blank");
-                    $("td").eq(y*21+x).addClass("me");
+                    add();
                     break;
                 case 68:
                 board[y][x] = 0;
                     if(board[y][x+1]==1){
                         break;
                     }
-                    $("td").eq(y*21+x).removeClass("me");
-                    $("td").eq(y*21+x).addClass("blank");
+                    remove();
                     x++;
-                    board[y][x]=2;
-                    $("td").eq(y*21+x).removeClass("blank");
-                    $("td").eq(y*21+x).addClass("me");
+                    add();
                     break;
 
             }
         });
+
+    function remove(){
+        board[y][x] = 0;
+        $("td").eq(y*21+x).removeClass("me");
+        $("td").eq(y*21+x).addClass("blank");
+    }
+
+    function add(){
+        board[y][x]=2;
+        $("td").eq(y*21+x).removeClass("blank");
+        $("td").eq(y*21+x).addClass("me");
+    }
 
 
     </script>
