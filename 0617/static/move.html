@@ -46,60 +46,69 @@
             $("#wrap").html(out);
         });
 
-
+    
         $(document).keyup(function( event ){
             //w - 87, a - 65, s - 83, d - 68
             var key = event.keyCode;
             // alert(typeof key);
+
+            var stepX = x, stepY = y; //이동할 위치 표현변수
+
+            //코드를 다듬을때 코드가 실행되는 순서를 고려
+            //조건이 만족한 뒤에 변하는값들은 변수를 만들어줘서 원본은 보존한뒤에
+            //나중에 그 변수의 값을 대입해서 변경
+
+
+            board[y][x] = 0;
+            $("td").eq(y*21+x).removeClass("me");
+            $("td").eq(y*21+x).addClass("blank");
+
             switch(key){
                 case 87:
-                    if(board[y-1][x]==1){
-                        break;
-                    }
-                    remove();
-                    y--;
-                    add();
+                    // if(board[y-1][x]==1){
+                    //     break;
+                    // }
+                    stepY--;
                     break;
                 case 65:
-                    if(board[y][x-1]==1){
-                        break;
-                    }
-                    remove();
-                    x--;
-                    add();
+                    // if(board[y][x-1]==1){
+                    //     break;
+                    // }
+                    stepX--;
                     break;
                 case 83:
-                    if(board[y+1][x]==1){
-                        break;
-                    }
-                    remove();
-                    y++;
-                    add();
+                    // if(board[y+1][x]==1){
+                    //     break;
+                    // }
+                    stepY++;
                     break;
                 case 68:
-                board[y][x] = 0;
-                    if(board[y][x+1]==1){
-                        break;
-                    }
-                    remove();
-                    x++;
-                    add();
+                    // if(board[y][x+1]==1){
+                    //     break;
+                    // }
+                    stepX++;
                     break;
-
             }
+            if(board[stepY][stepX] != 1){
+                x=stepX;
+                y=stepY;
+            }
+            board[y][x]=2;
+            $("td").eq(y*21+x).removeClass("blank");
+            $("td").eq(y*21+x).addClass("me");
         });
 
-    function remove(){
-        board[y][x] = 0;
-        $("td").eq(y*21+x).removeClass("me");
-        $("td").eq(y*21+x).addClass("blank");
-    }
+    // function remove(){
+    //     board[y][x] = 0;
+    //     $("td").eq(y*21+x).removeClass("me");
+    //     $("td").eq(y*21+x).addClass("blank");
+    // }
 
-    function add(){
-        board[y][x]=2;
-        $("td").eq(y*21+x).removeClass("blank");
-        $("td").eq(y*21+x).addClass("me");
-    }
+    // function add(){
+    //     board[y][x]=2;
+    //     $("td").eq(y*21+x).removeClass("blank");
+    //     $("td").eq(y*21+x).addClass("me");
+    // }
 
 
     </script>
