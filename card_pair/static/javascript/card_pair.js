@@ -1,3 +1,7 @@
+const cardImage = ["cat.png", "dog.png"];
+let timeHd = 0;
+
+
 $(function(){
     $("#start").click(start);
 });

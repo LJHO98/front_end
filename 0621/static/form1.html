@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 데이터 전달은 form태그 -->
+    <form method="GET" action="https">
+
+        <input type="text"> <br> <!-- text : 텍스트(영어, 숫자, 한글 등등) 입력 필드-->
+        <input type="password"> <br> <!-- password : 입력한 텍스트를 숨겨주는 비밀번호 필드-->
+        <input type="radio" name="gender">남자 <input type="radio" name="gender">여자 <br> 
+        <!-- 그룹을 설정하여 하나만 선택할 수 있다.-->
+
+        <input type="checkbox" name="hob">영화 <input type="checkbox" name="int">게임
+        <input type="checkbox">주식
+        <br>
+        <!-- 다중 선택이 가능하다-->
+
+        <input type="color"><br><!--색상을 선택할 수 있다.-->
+
+        <input type="date"><br><!-- 날짜 선택(년,월,일)-->
+
+        <input type="datetime-local"><br><!--날짜 선택(년,월,일,시,분)-->
+
+        <input type="time"><br><!-- 시간 선택(시,분)-->
+
+        <input type="month"><br><!-- 날짜 선택(년,월)-->
+
+        <input type="week"><br><!-- 년과 주를 선택-->
+
+        <input type="email"><br><!-- 이메일 입력 필드, 브라우저에서 기본형식 검증-->
+
+        <input type="number" min="0"><br><!--숫자입력 필드, 값의 범위 단계 지정 가능-->
+        <!--min-최솟값, max-최대값, step-증가값-->
+
+        <input type="search"><br> <!-- 검색필드, -->
+
+        <input type="tel"><br> <!-- 전화번호 입력 필드-->
+
+        <input type="file"><br><!-- 파일업로드 필드-->
+
+        <input type="image"src="http://loremflickr.com/50/50"><br>
+
+        <input type="url"><br><!--주소입력 필드, url형식 검증-->
+
+        <input type="range" min="0" max="100" step="5"><br><!-- 슬라이드 컨트롤 -->
+
+        <input type="hidden"> <!--화면에 표시안됨-->
+
+        <button type="submit">전송</button>
+        <button type="button">그냥버튼</button>
+        <button type="reset">폼 초기화</button>
+
+        <input type="submit" value="가입">
+        <input type="button" value="나도버튼">
+        <input type="reset" value="나도초기화기능"><br>
+
+        <textarea></textarea>
+    </form>
+
+    <!--
+        form- 데이터를 전송하기 위한 태그
+            속성
+                - action : 폼 데이터를 전송할 주소지정
+                - method : 폼 데이터를 전송할 방법 , GET, POST
+                - target : 폼데이터를 전송후에 새창에서 열것인가 아니면 현재 페이지를
+                            변경할것인가? 등등
+                - enctype : 폼 데이터의 인코딩 유형 지정
+                            파일 업로드시 multipart/form-data 사용
+                            application/x-www-form-urlencoded - 기본값
+                - autocomplete : 폼 내부 자동완성 기능 켜기 끄기
+        
+        데이터 전송 - submit()
+
+    
+    
+    
+    -->
+
+</body>
+</html>
