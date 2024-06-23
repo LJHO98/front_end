@@ -4,9 +4,9 @@
     box-sizing: border-box;
 }
 
-img{
+/* img{
     display:none;
-}
+} */
 
 body {
     display: flex;
@@ -33,9 +33,9 @@ table{
 }
 
 #wrap{
-    width:700px;
+    width:500px;
     position: relative;
-    right: -100px;
+    margin-left: 50px;
 }
 
 .cardBox .card{
