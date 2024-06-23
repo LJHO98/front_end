@@ -59,6 +59,8 @@ function userSelect() {
     $(this).addClass("click");
     $(this).find("img").css('display', 'block');
     selectedCards.push($(this));
+    console.log(selectedCards);
+    
 
     if (selectedCards.length === 2) {
         setTimeout(checkMatch, 1000);
@@ -66,8 +68,9 @@ function userSelect() {
 }
 
 function checkMatch() {
-    const img1 = selectedCards[0].find("img").attr("src");
+    const img1 = selectedCards[0].find("img").attr("src"); // 셀렉트카드 배열에 img 태그 src 속성을 저장 
     const img2 = selectedCards[1].find("img").attr("src");
+    console.log(img1);
 
     if (img1 === img2) {
         matchedCards += 2;
@@ -87,7 +90,7 @@ function checkMatch() {
 
 function randomImg() {
     const images = cardImage.sort(() => 0.5 - Math.random());
-    $(".card").each(function(index) {
-        $(this).append('<img src="./image/' + images[index] + '" alt="card image" style="display:none;">');
+    $(".card").each(function(index) { //for문과 같은 효과 card 클래스에 각각에 인덱스에 적용
+        $(this).append('<img src="./image/' + images[index] + '" alt="card image" style="display:none;">'); //card 클래스 td에 이미지 추가
     });
 }
