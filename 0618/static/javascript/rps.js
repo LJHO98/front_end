@@ -6,6 +6,7 @@ let comSelect=0; //컴퓨터 가위바위보 값
 
 $(function(){
     //전적 배열 초기화 세팅
+    record=[new Array(), new Array(), new Array()];
     let storageData = JSON.parse(localStorage.getItem("record"));
     if(storageData){ // 값 유무
         record=storageData;
@@ -32,7 +33,9 @@ function gameRecord(){
                 <td class="outcome">${record[2][i]} </td>
             </tr>
             `);
+        
     }
+    
 
     $("#modalBackground").click(function(){
         $("#modal").hide();
