@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        h2{ text-align: center; }
+        #wordList{ width: 500px; margin: 0 auto;}
+        ul{ list-style-type: none; padding:0; margin:0; }
+        .itemTitle{display:flex}
+        .sup{width:300px;}
+        .qua{width:100px;}
+        .rem{width:100px;}
+        #itemList li{ padding-bottom:10px; display:flex;}
+    </style>
+    <h2>여행 준비물</h2>
+    <!-- input 태그는 value값을 가짐 -->
+    <input type="text" id="word" name="word">
+    <input type="text" id="some" name="some">
+    <button onclick="save()">등록</button>
+
+    <div id="wordList">
+        <ul class="itemTitle">
+            <li class="sup">준비물</li>
+            <li class="qua">수량</li>
+            <li class="rem">비고</li>
+        </ul>
+        <ul id="itemList">
+
+        </ul>
+    </div>
+
+</body>
+</html>
+
+<script>
+    function save(){
+        // //input 태그안에 작성한 값 가져오기
+        // let v = $("#word").val();
+        // $("#word").val(''); // input태그 안에 비우기
+        // $("#word").focus(); // input태그에 커서넣기
+        // //html과 append는 태그 추가 가능 text는 불가능
+        // $("#wordList").append("<p>"+v+"</p>");
+        // $("p").on("click", function(){
+        //     $(this).remove();
+        // });
+
+        let v = $("#word").val();
+        let 수량 = $("#some").val();
+
+        $("#word").val('');
+        $("#some").val('');
+
+        $("#itemList").append(`<li> 
+            <div class="sup"> ${v}</div>
+            <div class="qua"> ${수량}</div>
+            <div class="rem">
+                <button class="update">수정</button>
+                <button class="del">삭제</button> 
+            </div>
+            </li>`);
+        
+            $(".del").on("click", function(){
+                var li = $(this).parent().parent();
+                li.remove();
+            });
+
+            $(".update").on("click", itemUpdate);
+    }
+    let nowUpdate = null;
+    console.log(nowUpdate);
+    // function itemUpdate(){
+    //     if(nowUpdate == null){
+    //         nowUpdate=$(this);
+    //         console.log(nowUpdate);
+    //         let v = $(this).parent().prev().prev().text();
+    //         let 수량 = $(this).parent().prev().text();
+    //         $(this).parent().prev().prev().empty().append(`<input type='text' value=${v}>`);
+    //         $(this).parent().prev().empty().append(`<input type='text' value=${수량}>`);
+    //         $(this).text("확인");
+    //     }else{
+    //         let v=$(this).parent().prev().prev().children().val();
+    //         let 수량 = $(this).parent().prev().children().val();
+    //         $(this).parent().prev().prev().empty().text(v);
+    //         $(this).parent().prev().empty().text(수량);
+
+    //         noUpdate=null;
+    //     }
+    // }
+    
+    function itemUpdate(){
+        if(nowUpdate == null){
+            nowUpdate=$(this);
+            console.log(nowUpdate);
+            var q = $(this).parent().prev();
+            var s = q.prev();
+            q.html('<input type="text" id="temp1" value="'+q.text()+'">');
+            s.html('<input type="text" id="temp2" value="'+s.text()+'">');
+        }else{
+            var q = nowUpdate.parent().prev();
+            var s = q.prev();
+            q.text($("#temp1").val());
+            s.text($("#temp2").val());
+
+            nowUpdate=null;
+            console.log(nowUpdate);
+        }
+    } 
+    
+    
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <button id="on">켜기</button> <button id="off">끄기</button>
+    <button id="up">증가</button><button id="down">감소</button>
+    <div id="lcd" style="display:none">
+        <p> 온도 <b id="temp">10</b> </p>
+    </div>
+
+    <script>
+        $("#on").on("click", function(){
+            $("#lcd").show();
+            
+        });
+        $("#off").on("click", function(){
+            $("#lcd").hide();
+        });
+
+        $("#up").on("click", function(){
+            if($("#lcd").css("display") == "block"){
+                var tmp = $("#temp").text();
+                tmp = parseInt(tmp);
+                if(tmp<35) tmp++;
+                $("#temp").text(tmp);
+            }
+                
+        });
+        $("#down").on("click", function(){
+            if($("#lcd").css("display") == "block"){
+                var tmp = $("#temp").text();
+                tmp = parseInt(tmp);
+                if(tmp>1) tmp--;
+                $("#temp").text(tmp);
+                }
+            });
+        
+    
+
+    </script>
+
+</body>
+</html>
