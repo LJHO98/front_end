@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Elements</title>
+    <style>
+        .clickable {
+            display: inline-block;
+            padding: 10px;
+            background-color: lightblue;
+            transition: transform 0.2s ease;
+            display:flex;
+            width:50px;
+        }
+
+        .clicked {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="clickable">Element 1</div>
+    <div class="clickable">Element 2</div>
+    <div class="clickable">Element 3</div>
+
+    <script>
+        // 모든 클릭 가능한 요소를 선택
+        const clickables = document.querySelectorAll('.clickable');
+
+        // 요소를 클릭했을 때의 이벤트 핸들러
+        clickables.forEach(clickable => {
+            clickable.addEventListener('click', function() {
+                // 다른 모든 요소의 clicked 클래스를 제거
+                clickables.forEach(el => el.classList.remove('clicked'));
+                // 현재 클릭된 요소에 clicked 클래스 추가
+                this.classList.add('clicked');
+            });
+        });
+    </script>
+</body>
+</html>
