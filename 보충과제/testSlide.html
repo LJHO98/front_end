@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test1</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    <style>
+        .buttonBox {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            width: 300px;
+            height: 50px;
+            position:absolute;
+            right:380px;
+            bottom:0;
+        }
+
+        .button {
+            flex: 1;
+            padding: 0;
+            margin: 0;
+            background-color: lightblue;
+            transition: transform 0.2s ease;
+            text-align: center;
+            cursor: pointer;
+            line-height: 45px;
+        }
+
+        .onClick {
+            background-color: red;
+            transform: scale(1.2); 
+        }
+        
+        .slider {
+            width: 60%;  /* 슬라이더 컨테이너의 너비 조정 */
+            margin: 20px auto;  /* 슬라이더를 중앙에 배치 */
+        }
+
+        .slick-slide {
+            position:relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 700px;  /* 슬라이드의 높이 조정 */
+            background-color: lightgrey;
+        }
+
+        .slideImg{
+            width:100%;
+            height:100%;
+        }
+
+        .slideContainer{
+            position:relative;
+        }
+
+
+       
+
+    </style>
+</head>
+<body>
+    
+    <div class="slideContainer">
+        <div class="slider">
+            <div ><img class="slideImg" src="./static/image/cat.jpeg" alt="1"></div>
+            <div><img class="slideImg" src="./static/image/dog.jpeg" alt="2"></div>
+            <div><img class="slideImg" src="./static/image/goat.jpeg" alt="3"></div>
+        </div>
+
+        <div class="buttonBox">
+            <div class="button" data-id="0">1번 이미지</div>
+            <div class="button" data-id="1">2번 이미지</div>
+            <div class="button" data-id="2">3번 이미지</div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // Slick 슬라이더 초기화
+            $('.slider').slick({
+                infinite: false
+            });
+
+            $(".button").on("click", function() {
+                var slideIndex = $(this).data("id");
+                // 슬라이더 이동
+                $('.slider').slick('slickGoTo', slideIndex);
+                // 다른 모든 요소의 onClick 클래스를 제거
+                $('.button').removeClass("onClick");
+                // 현재 클릭된 요소에 onClick 클래스 추가
+                $(this).addClass("onClick");
+            });
+        });
+    </script>
+</body>
+</html>
